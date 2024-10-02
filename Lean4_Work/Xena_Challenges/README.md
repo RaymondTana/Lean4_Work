@@ -1,6 +1,6 @@
 # Xena Maths Challenges
 
-Solving [kbuzzard/xena/Maths_Challenges](https://github.com/kbuzzard/xena/tree/master/Maths_Challenges) written in 2019 by Kevin Buzzard ([@kbuzzard](https://github.com/kbuzzard)). While these challenges were originally written in Lean3, I have converted and solved all in Lean4 with help from `mathlib4`.
+Solving [kbuzzard/xena/Maths_Challenges](https://github.com/kbuzzard/xena/tree/master/Maths_Challenges) written in 2019 by Kevin Buzzard ([@kbuzzard](https://github.com/kbuzzard)). While these challenges were originally written in `Lean3`, I have converted and solved all in `Lean4` with help from `mathlib4`.
 
 ## Xena Challenges
 

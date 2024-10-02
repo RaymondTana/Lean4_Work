@@ -2,7 +2,7 @@
 
 I use this repository to compile my results written in `Lean4`. 
 
-So far, I have solved all of Kevin Buzzards Maths Challenges. More to come!
+So far, I have solved all of Kevin Buzzards Maths Challenges and the Natural Number Game. More to come!
 
 # Converting Lean3 to Lean4 Code
 
