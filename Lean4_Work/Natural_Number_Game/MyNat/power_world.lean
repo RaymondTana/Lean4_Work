@@ -23,12 +23,14 @@ lemma pow_add (a m n : 𝕟) : a ^ (m + n) = a ^ m * a ^ n :=
 lemma mul_pow (a b n : 𝕟) : (a * b) ^ n = a ^ n * b ^ n :=
   by induction n with
   | zero => rewrite [pow_zero, pow_zero, pow_zero, mul_one]; rfl
-  | succ n' ih => rewrite [pow_succ, ih, pow_succ, pow_succ, mul_assoc, mul_comm b, mul_assoc, ←mul_assoc, mul_comm _ b]; rfl
+  | succ n' ih => rewrite [pow_succ, pow_succ, pow_succ, ih]; simp only [mul_assoc, mul_left_comm]
+  -- generated above using simp?, or can more explicitly do so as written below?
+  -- | succ n' ih => rewrite [pow_succ, ih, pow_succ, pow_succ, mul_assoc, mul_comm b, mul_assoc, ←mul_assoc, mul_comm _ b]; rfl
 
-lemma pow_pow (a m n : 𝕟) : (a ^ m) ^ n = a ^ (m * n) := 
- by induction n with 
+lemma pow_pow (a m n : 𝕟) : (a ^ m) ^ n = a ^ (m * n) :=
+ by induction n with
  | zero => rewrite [mul_zero, pow_zero, pow_zero]; rfl
- | succ n' ih => rewrite [pow_succ, ih, ←pow_add, ←mul_succ]; rfl
+ | succ n' ih => rewrite [pow_succ, ih, mul_succ, pow_add]; rfl
 
 lemma add_squared (a b : 𝕟) : (a + b) ^ (2 : 𝕟) = a ^ (2 : 𝕟) + b ^ (2 : 𝕟) + (2 * a * b) :=
   by rewrite [two_eq_succ_one, one_eq_succ_zero, pow_succ, pow_succ, pow_succ, pow_succ, pow_succ, pow_succ, pow_zero, mul_one, pow_zero, mul_one, pow_zero, mul_one, add_mul, mul_add, mul_add, mul_comm b a, add_right_comm, add_comm (a * b), add_assoc, add_assoc, add_same, ←add_assoc, ←one_eq_succ_zero, ←two_eq_succ_one, ←mul_assoc]; rfl
